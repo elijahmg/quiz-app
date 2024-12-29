@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for quiz-app on 2024-12-27T22:53:35+01:00
+# fly.toml app configuration file generated for quiz-app-cold-resonance-5945 on 2024-12-29T19:54:50+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'quiz-app'
+app = 'quiz-app-cold-resonance-5945'
 primary_region = 'fra'
 
 [build]

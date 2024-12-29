@@ -50,9 +50,9 @@ function App(): JSX.Element {
   })
 
   function handleNavigateToGameState({
-    quizId,
-    status
-  }: {
+                                       quizId,
+                                       status
+                                     }: {
     quizId: string | null
     status?: QuizStatusStatusOptions
   }) {
@@ -75,14 +75,14 @@ function App(): JSX.Element {
   }
 
   return (
-    <div className="lg:grid-cols-2 sm:flex lg:grid items-center justify-center h-[100vh] max-w-(--breakpoint-xl) sm:m-4 lg:mx-auto">
-      <div className="space-y-4 justify-self-center">
+    <div className="flex mt-40 justify-center h-[100vh] max-w-(--breakpoint-xl) mx-4 lg:mx-auto">
+      <div className="space-y-4 sm:hidden">
         <h1 className="text-6xl font-bold">Hello there!</h1>
         <h2 className="text-xl font-bold">Are you ready to play?</h2>
         <h2 className="text-xl">
           Time to enter your quiz’s PIN and let’s get started
         </h2>
-        <InputOTP disabled={isPending} maxLength={4} onChange={setClientPin}>
+        <InputOTP containerClassName="justify-center" disabled={isPending} maxLength={4} onChange={setClientPin}>
           <InputOTPGroup>
             <InputOTPSlot index={0} />
             <InputOTPSlot index={1} />
@@ -90,7 +90,7 @@ function App(): JSX.Element {
             <InputOTPSlot index={3} />
           </InputOTPGroup>
         </InputOTP>
-        <div className="space-x-4">
+        <div className="space-x-4 flex justify-center">
           <Button
             disabled={isPending}
             onClick={() => checkIsQuizExistByPin(clientPin)}
@@ -99,7 +99,7 @@ function App(): JSX.Element {
           </Button>
         </div>
       </div>
-      <div className="space-y-4 justify-self-center">
+      <div className="space-y-4 justify-self-center hidden md:block">
         <h1 className="text-6xl font-bold">Wanna create or manage the game?</h1>
         <h2 className="text-xl font-bold">
           Enter the password of the created game
@@ -110,16 +110,18 @@ function App(): JSX.Element {
           }}
           placeholder="Password..."
         />
-        <Button onClick={() => mutateGetQuizByPassword(adminPassword)}>
-          Manage the game!
-        </Button>
-        <h2 className="text-xl font-bold">OR</h2>
-        <Link
-          className={buttonVariants({ variant: 'outline' })}
-          to="/admin/create"
-        >
-          Create new quiz
-        </Link>
+        <div className="space-x-4 flex">
+          <Button onClick={() => mutateGetQuizByPassword(adminPassword)}>
+            Manage the game!
+          </Button>
+          <h2 className="text-xl font-bold">OR</h2>
+          <Link
+            className={buttonVariants({ variant: 'outline' })}
+            to="/admin/create"
+          >
+            Create new quiz
+          </Link>
+        </div>
       </div>
     </div>
   )

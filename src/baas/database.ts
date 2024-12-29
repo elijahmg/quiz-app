@@ -1,7 +1,7 @@
 import PocketBase from 'pocketbase'
 import { Collections } from '@/baas/pocketbase-types'
 
-const DB_URL = process.env.DB_URL || 'http://127.0.0.1:8090'
+const DB_URL = import.meta.env.VITE_DB_URL || 'http://127.0.0.1:8090'
 
 class Database {
   pb: PocketBase

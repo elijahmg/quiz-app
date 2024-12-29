@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { CenterWrapper } from '@/components/wrappers/center-wrapper'
 import { usePlayerGameState } from '@/state/player-game.state'
 import { QuizStatusStatusOptions } from '@/baas/pocketbase-types'
-import { PeopleParty } from '../../../../svg-assets/people-party'
+import { PeopleParty } from '@/svg-assets/people-party'
 
 export const Route = createLazyFileRoute('/$quizId/_layout/break')({
   component: Break

@@ -4,7 +4,7 @@ import { CenterWrapper } from '@/components/wrappers/center-wrapper'
 import { useTeamData } from '@/hooks/use-team-data'
 import { QuizStatusStatusOptions } from '@/baas/pocketbase-types'
 import { usePlayerGameState } from '@/state/player-game.state'
-import { AlienTaken } from '../../../../svg-assets/alien-taken'
+import { AlienTaken } from '@/svg-assets/alien-taken'
 
 export const Route = createFileRoute('/$quizId/_layout/waiting')({
   component: Waiting
